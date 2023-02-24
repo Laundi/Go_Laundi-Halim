@@ -1,0 +1,10 @@
+## RESUME
+
+- Menurut saya fungsi utama flowchart yaitu memberi gambaran jalannya sebuah program dari satu proses ke proses lainnya. Sehingga, alur program menjadi mudah dipahami oleh semua orang. Selain itu, fungsi lain dari flowchart adalah untuk menyederhanakan rangkaian prosedur agar memudahkan pemahaman terhadap informasi tersebut. Flowchart atau bagan alur yaitu diagram yang menampilkan langkah-langkah dan keputusan untuk melakukan sebuah proses dari suatu program. Setiap langkah digambarkan dalam bentuk diagram dan dihubungkan dengan garis atau arah panah. Flowchart memiliki peran penting dalam memutuskan sebuah langkah atau fungsionalitas dari sebuah proyek pembuatan program yang melibatkan banyak orang sekaligus. Selain itu dengan menggunakan bagan alur proses dari sebuah program akan lebih jelas, ringkas, dan mengurangi kemungkinan untuk salah penafsiran. Penggunaan flowchart dalam dunia pemrograman juga merupakan cara yang bagus untuk menghubungkan antara kebutuhan teknis dan non-teknis. 
+
+- Menurut saya Algoritma Pemrograman yaitu suatu alur yang dipergunakan dalam suatu perhitungan atau pemecahan suatu masalah secara sistematis, serta dalam kegiatan pemrograman algoritma biasanya dianggap sebagai sebuah logika untuk menentukan program yang akan dibuat. Arti singkat dari Algoritma Pemrograman itu sendiri yaitu urutan logis pengambilan suatu keputusan untuk memecahkan suatu masalah. Fungsi utama algoritma pemrograman adalah untuk menyelesaikan suatu masalah. Algoritma ini merupakan suatu hal yang penting dalam aktivitas membuat suatu program. Berikut fungsi algoritma pada pemrograman lainnya:
+> Dapat menyelesaikan permasalahan rumit dalam suatu program yang melibatkan perhitungan tingkat tinggi.
+> Mampu menyederhanakan suatu program sehingga penggunaannya lebih efektif dan efisien.
+> Dapat digunakan secara berulang sehingga meminimalkan penulisan program yang berulang.
+> Mempermudah pencarian kesalahan serta dapat diperbaiki dalam waktu yang singkat.
+> Adanya alur proses yang jelas sehingga kamu dapat dengan mudah mencari kesalahan jika terjadi error.
