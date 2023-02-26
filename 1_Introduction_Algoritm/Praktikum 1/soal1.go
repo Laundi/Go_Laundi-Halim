@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	fnt.Println("contoh aja")
+	fmt.Println("contoh aja")
 }
