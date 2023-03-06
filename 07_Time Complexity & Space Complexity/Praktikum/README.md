@@ -1,3 +1,5 @@
+## Summary_Time Complexity & Space Complexity
+
 Untuk mengetahui bahwa time complexity berperan untuk menghutung sebrapa cepat/efisien sebuah algoritma
 0(1) --> berapapun inputnya, jumlah dominant operation hanya dilakukan 1 kali
 0(n) --> jumlah dominant operation bergantung pada besarnya "n"
