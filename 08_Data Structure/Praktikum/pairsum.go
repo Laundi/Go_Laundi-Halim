@@ -1,25 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func PairSum(arr []int, target int) []int{
-	var result []int
+func PairSum(data []int, target int) []int {
 
-	for i:=; i<len(arr); i++{
-		for j:=0; j<len(arr); j++{
-			if arr[i] + arr [j] == target {
-				result = append(result, i, j)
-				return result
+	n := len(data)
+
+	for i, v := range data {
+
+		for j := i; j < n; j++ {
+
+			k := data[j]
+
+			if v + k == target {
+
+				return []int{i, j}
 			}
 		}
 	}
-	return result
+
+	return []int{}
 }
 
 func main() {
-	fmt.Println(PairSum([]int{1, 2, 3, 4, 6}, 6)) // [1, 3]
-	fmt.Println(Pairsum([]int{2, 5, 9, 11}, 11)) // [0, 2]
-	fmt.Println(Pairsum([]int{1, 3, 5, 7}, 12)) // [2, 3]
-	fmt.Println(Pairsum([]int{1, 4, 6, 8}, 10)) // [1, 2]
-	fmt.Println(Pairsum([]int{1, 5, 6, 7}, 6)) // [0, 1]
+
+	fmt.Println(PairSum([]int{1,2,3,4,6},6))
+	fmt.Println(PairSum([]int{2,5,9,11},11))
+	fmt.Println(PairSum([]int{1,3,5,7},12))
+	fmt.Println(PairSum([]int{1,4,6,8},10))
+	fmt.Println(PairSum([]int{1,5,6,7},6))
 }
