@@ -1,0 +1,139 @@
+CREATE DATABASE alta_online_shop;
+CREATE TABLE users (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    status SMALLINT,
+    dob DATE,
+    gender CHAR(1) NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+    );
+
+CREATE TABLE payment_methods(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255)
+    status SMALLINT,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+    );
+
+-- 1-to-1: payment method description.
+
+CREATE TABLE payment_method_descriptions(
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    payment_method_id INT(11) UNIQUE,
+    description TEXT,
+    detail VARCHAR(50),
+    create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (payment_method_id) REFERENCES payment_method(id)
+);
+
+-- -- many-to-many: user dengan payment method menjadi user_payment_method
+
+CREATE TABLE user_payment_method_details (
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    user_id INT(11),
+    payment_method_detail_id INT(11),
+    create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    update_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (payment_method_detail_id) REFERENCES payment_method
+);
+
+
+CREATE TABLE operators(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255),
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+    );
+
+CREATE TABLE product_types(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255),
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+    );
+
+CREATE TABLE transactions(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id int(11),
+    payment_method_id int(11),
+    status varchar(10)
+    total_qty int(11),
+    total price_NUMERICS(25,2),
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(user_id) REFERENCES users(id),
+    FOREIGN KEY(payment_method_id) REFERENCES payment_method(id)
+    );
+
+CREATE TABLE products(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    product_type_id int(11),
+    operator_id int(11),
+    code varchar(50),
+    nama varchar(255),
+    status SMALLINT,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(product_type_id) REFERENCES product_types(id),
+    FOREIGN KEY(operator_id) REFERENCES operators(id)
+    );
+
+CREATE TABLE product_descriptions(
+    id INT(11), NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    product_id int(11),
+    description TEXT,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(product_id) REFERENCES products(id)
+    );
+
+CREATE TABLE transactions_details(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    transaction_id int(11)
+    product_id int(11)
+    status varchar(10)
+    qty int(11),
+    price NUMERIC(25,2)
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(transactions_id) REFERENCES transactions(id),
+    FOREIGN KEY(product_id) REFERENCES product(id)
+    );
+
+-- 1-to-many: user dengan alamat.
+
+    CREATE TABLE address(
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    user_id INT(11),
+    address_name VARCHAR(30),
+    postal_code INT(11),
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(user_id) REFERENCES users(id)
+    );
+
+CREATE TABLE kurir(
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    address_id INT(11),
+    recipient VARCHAR(50),
+    phone_number INT(11),
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY (address_id) REFERENCES address(id)   
+);
+
+-- menambahkan field ongkos_dasar di tabel kurir
+
+ALTER TABLE kurir ADD ongkos_dasar int(11) NOT NULL;
+
+-- rename nama tabel kurir menjadi shipping
+
+ALTER TABLE kurir RENAME TO shipping;
+
+-- hapus tabel shipping karena tidak terpakai
+
+DROP TABLE shipping;
