@@ -3,7 +3,7 @@ package database
 import (
 	"fmt"
 
-	"go_Muhammad-Wahyu-Yudiansyah/21_0RM-MVC/Praktikum/Semuatugas/models"
+	"go_Laundi-Halim/21_0RM-MVC/Praktikum/Semuatugas/models"
 	
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	
