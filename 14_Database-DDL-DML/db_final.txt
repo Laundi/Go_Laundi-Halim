@@ -1,0 +1,70 @@
+table product_types{
+  id INT(11) [pk]
+  name VARCHAR(255)
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+table operators{
+  id INT(11) [pk]
+  name VARCHAR(255)
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+table payment_methods{
+  id INT(11) [pk]
+  name VARCHAR(255)
+  status SMALLINT
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+table users{
+  id INT(11) [pk]
+  status SMALLINT
+  dob DATE
+  gender CHAR(1)
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+table products{
+  id INT(11) [pk]
+  product_type_id INT(11) [ref: > product_types.id]
+  operator_id INT(11) [ref: > operators.id]
+  code VARCHAR(50)
+  name VARCHAR(100)
+  status SMALLINT
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+table product_descriptions{
+  id INT(11) [pk]
+  product_id INT(11) [ref: > products.id]
+  description TEXT
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+table transactions{
+  id INT(11) [pk]
+  user_id INT(11) [ref: > users.id]
+  payment_method_id INT(11) [ref: > payment_methods.id]
+  status VARCHAR(10)
+  total_qty INT(11)
+  total_price NUMERIC(25,2)
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
+
+table transaction_details{
+  transaction_id INT(11) [ref: > transactions.id]
+  product_id INT(11) [ref: > products.id]
+  status VARCHAR(10)
+  qty INT(11)
+  price NUMERIC(25,2)
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+}
