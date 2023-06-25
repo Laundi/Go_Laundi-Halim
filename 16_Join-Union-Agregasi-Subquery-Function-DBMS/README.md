@@ -1,5 +1,7 @@
 ## Join, Union, Aggregate, Subquery, Function (DBMS)
 
+-	Belajar untuk mampu menggunakan statement SQL DDL.
+
 *Order By, Group By, Limit, Between, Having*
 
 *ONE to ONE relationship*, contoh 1 user hanya memiliki 1 foto profile

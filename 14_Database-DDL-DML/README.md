@@ -1,5 +1,7 @@
 # Database, DDL, DML, DCL
 
+-	Belajar untuk mampu mengerti bentuk-bentuk relasi skema database besar, memodelkan relasi skema dasar, mengimplementasikan 1-to 1, 1-to-many, many-to-many.
+
 *=== Tugas ===*
 
 ![db](db.png)

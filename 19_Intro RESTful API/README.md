@@ -1,3 +1,3 @@
 ## Summary System Design
 
-Belajar untuk mampu mengimplementasikan HTTP method (get, post, put, delete).
+Belajar untuk mampu mengimplementasikan HTTP method (get, post, put, delete)
